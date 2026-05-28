@@ -73,6 +73,5 @@ Highlights:
 - Portfolio: https://paulocabrera.github.io  
 - Email: pauloacabreraa06@gmail.com  
 
----
 
 ### Always learning, always building
