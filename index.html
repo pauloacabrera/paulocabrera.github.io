@@ -13,7 +13,7 @@
     }
 
     body {
-      font-family: Garamond, serif;
+      font-family: Garamond, 'EB Garamond', serif;
       background: #0f172a;
       color: white;
       line-height: 1.6;
@@ -34,6 +34,11 @@
       flex-wrap: wrap;
     }
 
+    .header-text {
+      flex: 1;
+      min-width: 220px;
+    }
+
     .header-text h1 {
       font-size: 48px;
       margin-bottom: 10px;
@@ -44,6 +49,13 @@
       font-size: 18px;
     }
 
+    .header-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
     .header-photo img {
       width: 130px;
       height: 130px;
@@ -51,7 +63,6 @@
       object-fit: cover;
       border: 3px solid #38bdf8;
       background: #1e293b;
-      display: block;
     }
 
     .photo-placeholder {
@@ -60,7 +71,7 @@
       border-radius: 50%;
       border: 3px solid #38bdf8;
       background: #1e293b;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       color: #64748b;
@@ -94,24 +105,86 @@
     }
 
     .card p {
-      color: #cbd5e1;
       margin-bottom: 12px;
+      color: #cbd5e1;
     }
 
     .repo-link {
+      display: inline-block;
+      margin-bottom: 20px;
       color: #38bdf8;
-      font-weight: bold;
       text-decoration: none;
+      font-weight: bold;
     }
 
     .repo-link:hover {
       text-decoration: underline;
     }
 
-    .preview-images img {
+    .preview-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .preview-images-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .preview-images img,
+    .preview-images-4 img {
       width: 100%;
       border-radius: 10px;
       border: 2px solid #334155;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #cbd5e1;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: #334155;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+      margin-top: 40px;
+    }
+
+    a {
+      color: #38bdf8;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .header-text h1 {
+        font-size: 34px;
+      }
+
+      .preview-images-4 {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -127,30 +200,124 @@
     </div>
 
     <div class="header-photo">
-      <img src="1000094059" alt="Profile Photo"
-        onerror="this.style.display='none'; document.getElementById('fallback').style.display='flex';">
-      
-      <div id="fallback" class="photo-placeholder">
-        Image not found<br>Check file name
-      </div>
+      <!-- Rename your photo file to me.jpg and put it in the same folder -->
+      <img src="me.jpg" alt="Paulo A. Cabrera"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="photo-placeholder" style="display:none;">Your<br>photo here</div>
     </div>
 
   </div>
 </header>
 
 <section>
+
   <h2>Featured Projects</h2>
 
   <div class="card">
     <h3>Bank Queue Management System</h3>
     <p>A simulation-based queue system designed to improve customer flow in a banking environment.</p>
-
-    <a class="repo-link" href="https://github.com/your-repo" target="_blank">
-      View Repository
-    </a>
-
+    <a class="repo-link" href="https://github.com/pauloacabrera/unibank_queue_management_system.git" target="_blank">View Repository</a>
+    <div class="preview-images">
+      <img src="login.png" alt="Login Screen">
+      <img src="dashboard.png" alt="Dashboard">
+      <img src="queue.png" alt="Queue Management">
+    </div>
+    <p><strong>Stack:</strong> Python, Tkinter / CustomTkinter</p>
+    <ul>
+      <li>Ticket-based queue generation</li>
+      <li>Service counter management</li>
+    </ul>
   </div>
+
+  <div class="card">
+    <h3>Expense Tracker System</h3>
+    <p>A desktop application that helps users manage income and expenses with categorized tracking and local database storage.</p>
+    <a class="repo-link" href="https://github.com/pauloacabrera/expense_tracker_system" target="_blank">View Repository</a>
+    <div class="preview-images">
+      <img src="explogin.png" alt="Expense Login">
+      <img src="dashboardexp.png" alt="Expense Dashboard">
+    </div>
+    <p><strong>Stack:</strong> Python, SQLite, CustomTkinter</p>
+    <ul>
+      <li>Add, edit, and delete transactions</li>
+      <li>Categorized expense tracking</li>
+      <li>Lightweight local database system</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>AI Powered Job Application Tracker</h3>
+    <p>A web-based application that helps users track job applications with AI-powered insights and status management.</p>
+    <a class="repo-link" href="https://github.com/pauloacabrera/AI_Job_Application_Tracker.git" target="_blank">View Repository</a>
+    <div class="preview-images-4">
+      <img src="one.PNG" alt="Screenshot 1">
+      <img src="two_2.PNG" alt="Screenshot 2">
+      <img src="three.PNG" alt="Screenshot 3">
+      <img src="four.PNG" alt="Screenshot 4">
+    </div>
+    <p><strong>Stack:</strong> HTML, CSS, JavaScript</p>
+    <ul>
+      <li>Track job applications efficiently</li>
+      <li>AI-powered application insights</li>
+      <li>Status and progress management</li>
+    </ul>
+  </div>
+
+  <h2>Skills & Technologies</h2>
+
+  <div class="card">
+    <div class="skills">
+      <div class="skill">Python</div>
+      <div class="skill">SQL</div>
+      <div class="skill">SQLite</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">PyCharm</div>
+      <div class="skill">Tkinter</div>
+      <div class="skill">CustomTkinter</div>
+      <div class="skill">Git</div>
+      <div class="skill">MySQL Workbench</div>
+      <div class="skill">GitHub</div>
+      <div class="skill">Pandas</div>
+      <div class="skill">Pillow</div>
+      <div class="skill">Technical Support</div>
+      <div class="skill">ReportLab</div>
+      <div class="skill">CSS</div>
+      <div class="skill">VS Code</div>
+      <div class="skill">Networking</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">HTML</div>
+      <div class="skill">Cybersecurity Fundamentals</div>
+    </div>
+  </div>
+
+  <h2>What I Do</h2>
+
+  <div class="card">
+    <ul>
+      <li>Develop applications using Python (PyCharm)</li>
+      <li>Write and manage SQL queries using MySQL Workbench</li>
+      <li>Build desktop-based systems with CRUD functionality</li>
+      <li>Basic database management using MySQL Workbench</li>
+      <li>Create UI applications using CustomTkinter</li>
+      <li>Perform basic computer hardware and software technical support</li>
+      <li>Troubleshoot basic network issues</li>
+      <li>Apply cybersecurity awareness and security practices</li>
+    </ul>
+  </div>
+
+  <h2>Connect With Me</h2>
+
+  <div class="card">
+    <p>GitHub: <a href="https://github.com/pauloacabrera" target="_blank">github.com/pauloacabrera</a></p>
+    <p>Portfolio: <a href="https://pauloacabrera.github.io/paulocabrera.github.io/" target="_blank">paulocabrera.github.io</a></p>
+    <p>Email: pauloacabreraa06@gmail.com</p>
+  </div>
+
 </section>
+
+<footer>
+  Always learning, always building.
+</footer>
 
 </body>
 </html>
