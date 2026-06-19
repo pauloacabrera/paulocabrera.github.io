@@ -8,25 +8,6 @@
 
   <style>
 
-  header{
-  text-align:center;
-  padding:70px 20px;
-  background:#111827;
-  position:relative; /* add this */
-}
-
-/* Profile Picture */
-.profile-pic{
-  position:absolute;
-  top:20px;
-  right:20px;
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #38bdf8;
-}
-    
     {
       margin:0;
       padding:0;
@@ -56,6 +37,8 @@
       font-size:18px;
     }
 
+  
+    
     section{
       max-width:1100px;
       margin:auto;
@@ -144,9 +127,26 @@
 
 <body>
 
-<header>
+<header style="position:relative;">
+
+  <img
+    src="pic.png"
+    alt="Paulo Cabrera"
+    style="
+      position:absolute;
+      top:20px;
+      right:20px;
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid #38bdf8;
+    "
+  >
+
   <h1>Paulo A. Cabrera</h1>
   <p>BS Information Technology with Specialization in Cybersecurity</p>
+
 </header>
 
 <section>
