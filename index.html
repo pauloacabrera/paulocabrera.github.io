@@ -1,357 +1,523 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paulo A. Cabrera | Portfolio</title>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
- 
   <style>
-
-    {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
-
-    body{
-      font-family: Arial, sans-serif;
-      background:#0f172a;
-      color:white;
-      line-height:1.6;
+    ::-webkit-scrollbar-track {
+      background: #0b0d17;
     }
-
-    header{
-      text-align:center;
-      padding:70px 20px;
-      background:#111827;
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
     }
-
-    header h1{
-      font-size:48px;
-      margin-bottom:10px;
-    }
-
-    header p{
-      color:#94a3b8;
-      font-size:18px;
-    }
-
- 
-   
-    section{
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
-    }
-
-    h2{
-      font-size:32px;
-      margin-bottom:25px;
-      color:#38bdf8;
-    }
-
-    .card{
-      background:#1e293b;
-      padding:25px;
-      border-radius:14px;
-      margin-bottom:30px;
-    }
-
-    .card h3{
-      margin-bottom:10px;
-      font-size:26px;
-    }
-
-    .card p{
-      margin-bottom:12px;
-      color:#cbd5e1;
-    }
-
-    .repo-link{
-      display:inline-block;
-      margin-bottom:20px;
-      color:#38bdf8;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .repo-link:hover{
-      text-decoration:underline;
-    }
-
-    .preview-images{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;
-      margin-bottom:20px;
-    }
-
-    .preview-images img{
-      width:100%;
-      border-radius:10px;
-      border:2px solid #334155;
-    }
-
-    ul{
-      padding-left:20px;
-      color:#cbd5e1;
-    }
-
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .skill{
-      background:#334155;
-      padding:10px 16px;
-      border-radius:10px;
-      font-size:14px;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      color:#94a3b8;
-      border-top:1px solid #1e293b;
-      margin-top:40px;
-    }
-
-    a{
-      color:#38bdf8;
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
     }
   </style>
 </head>
 
-<body>
+<body class="bg-[#0b0d17] text-slate-100 font-sans min-h-screen relative overflow-x-hidden selection:bg-sky-500 selection:text-white">
 
-<header style="position:relative;">
+  <!-- Ambient Radial Glows in Background -->
+  <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-sky-900/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-  <img
-    src="pic.png"
-    alt="Paulo Cabrera"
-    style="
-      position:absolute;
-      top:20px;
-      right:20px;
-      width:70px;
-      height:70px;
-      border-radius:50%;
-      object-fit:cover;
-      border:3px solid #38bdf8;
-    "
-  >
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto px-4 py-8 lg:py-16 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-  <h1>Paulo A. Cabrera</h1>
-  <p>Bachelor in Science in Information Technology with Specialization in Cybersecurity</p>
+      <!-- LEFT SIDEBAR: PROFILE CARD -->
+      <div class="lg:col-span-4 bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 text-center shadow-2xl relative">
+        
+        <!-- Profile Image Container -->
+        <div class="relative w-40 h-40 mx-auto mb-6">
+          <img 
+            src="pic.png" 
+            alt="Paulo Cabrera" 
+            class="w-full h-full object-cover rounded-2xl border-2 border-sky-500/50 shadow-lg shadow-sky-500/10"
+          />
+        </div>
 
-</header>
+        <h1 class="text-2xl font-bold text-white tracking-wide">Paulo A. Cabrera</h1>
+        <!-- Changed to Aspiring and Sky Blue -->
+        <div class="inline-block px-3 py-1 mt-2 text-xs font-medium text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded-full">
+          Aspiring IT professional
+        </div>
 
-<section>
+        <!-- Bio Summary -->
+        <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+          Bachelor of Science in Information Technology with Specialization in Cybersecurity
+        </p>
 
-  <div class="card">
-   
-<h2>About Me</h2>
-   
-    <p>
-      I am an aspiring IT professional with a strong interest in software development, cybersecurity, and
-      technical support.
-    </p>
-   
-  <h2>Featured Projects</h2>
+        <hr class="border-slate-800/80 my-6" />
 
-  <div class="card">
-    <h3>Malicious EML Detector</h3>
+        <!-- Quick Info Contact Details -->
+        <div class="space-y-4 text-left text-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-center text-sky-400 shrink-0">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-[11px] text-slate-400 font-medium uppercase tracking-wider">Email</p>
+              <a href="mailto:cabrera.paulo.a@gmail.com" class="text-xs text-slate-200 hover:text-sky-400 transition truncate block">
+                cabrera.paulo.a@gmail.com
+              </a>
+            </div>
+          </div>
 
-    <p>
-      A full stack cybersecurity web application that can detect malicious eml. files
-    </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-center text-sky-400 shrink-0">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-[11px] text-slate-400 font-medium uppercase tracking-wider">GitHub</p>
+              <a href="https://github.com/pauloacabrera" target="_blank" class="text-xs text-slate-200 hover:text-sky-400 transition truncate block">
+                github.com/pauloacabrera
+              </a>
+            </div>
+          </div>
 
-    <a class="repo-link"
-       href="https://github.com/pauloacabrera/malicious_eml_detector.git">
-       View Repository
-    </a>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-center text-sky-400 shrink-0">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-[11px] text-slate-400 font-medium uppercase tracking-wider">Portfolio</p>
+              <a href="https://pauloacabrera.github.io/paulocabrera.github.io/" target="_blank" class="text-xs text-slate-200 hover:text-sky-400 transition truncate block">
+                paulocabrera.github.io
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <div class="preview-images">
-      <img src="login.png" alt="Login Screen">
-      <img src="dashboard.png" alt="Dashboard">
-      <img src="queue.png" alt="Queue Management">
+        <!-- Download CV Action Button -->
+        <a 
+          href="mailto:cabrera.paulo.a@gmail.com?subject=Inquiry%20from%20Portfolio" 
+          class="mt-8 flex items-center justify-center gap-2 w-full py-3 px-4 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white font-medium text-sm rounded-xl transition shadow-lg shadow-sky-500/25 active:scale-95"
+        >
+          <i data-lucide="send" class="w-4 h-4"></i>
+          Get In Touch
+        </a>
+      </div>
+
+      <!-- RIGHT SIDE CONTENT AREA -->
+      <div class="lg:col-span-8 space-y-6">
+
+        <!-- TOP NAVIGATION TABS (Sky blue active state) -->
+        <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-2 flex flex-wrap items-center justify-center sm:justify-start gap-1">
+          <button onclick="switchTab('about')" id="btn-about" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition duration-200 bg-sky-500 text-white shadow-lg shadow-sky-500/20">
+            <i data-lucide="user" class="w-4 h-4"></i> About
+          </button>
+          <button onclick="switchTab('projects')" id="btn-projects" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white transition duration-200">
+            <i data-lucide="folder-git-2" class="w-4 h-4"></i> Projects
+          </button>
+          <button onclick="switchTab('skills')" id="btn-skills" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white transition duration-200">
+            <i data-lucide="code" class="w-4 h-4"></i> Skills
+          </button>
+          <button onclick="switchTab('services')" id="btn-services" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white transition duration-200">
+            <i data-lucide="layers" class="w-4 h-4"></i> Services
+          </button>
+          <button onclick="switchTab('certifications')" id="btn-certifications" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white transition duration-200">
+            <i data-lucide="award" class="w-4 h-4"></i> Certs
+          </button>
+        </div>
+
+        <!-- MAIN DISPLAY CONTAINER -->
+        <div class="bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 sm:p-8 min-h-[500px]">
+
+          <!-- SECTION 1: ABOUT ME -->
+          <div id="tab-about" class="tab-content space-y-8">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <h2 class="text-2xl font-bold text-white">About Me</h2>
+                <div class="h-0.5 w-16 bg-sky-500 rounded-full"></div>
+              </div>
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                I am an aspiring IT professional with a strong interest in software development, cybersecurity, and technical support. Passionate about building robust applications and implementing security best practices across modern IT infrastructures.
+              </p>
+            </div>
+
+            <!-- What I Do Overview Cards -->
+            <div>
+              <h3 class="text-lg font-bold text-white mb-4">Core Focus Areas</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Added Technical Support Focus -->
+                <div class="bg-slate-800/30 border border-slate-800 p-4 rounded-2xl flex flex-col items-center gap-3 text-center">
+                  <div class="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-amber-400">
+                    <i data-lucide="life-buoy" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm">Technical Support</h4>
+                    <p class="text-xs text-slate-400 mt-1">Basic hardware/software support and network troubleshooting.</p>
+                  </div>
+                </div>
+
+                <div class="bg-slate-800/30 border border-slate-800 p-4 rounded-2xl flex flex-col items-center gap-3 text-center">
+                  <div class="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm">Cybersecurity</h4>
+                    <p class="text-xs text-slate-400 mt-1">Security fundamentals, web security, and practices.</p>
+                  </div>
+                </div>
+
+                <div class="bg-slate-800/30 border border-slate-800 p-4 rounded-2xl flex flex-col items-center gap-3 text-center">
+                  <div class="p-3 bg-sky-500/10 border border-sky-500/20 rounded-xl text-sky-400">
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm">Software Dev</h4>
+                    <p class="text-xs text-slate-400 mt-1">Developing applications with clean CRUD operations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: FEATURED PROJECTS (Keep PNG/png extensions) -->
+          <div id="tab-projects" class="tab-content hidden space-y-8">
+            <div class="flex items-center gap-3 mb-2">
+              <h2 class="text-2xl font-bold text-white">Featured Projects</h2>
+              <div class="h-0.5 w-16 bg-sky-500 rounded-full"></div>
+            </div>
+
+            <!-- NEW PROJECT: Malicious EML Detector -->
+            <div class="bg-slate-800/30 border border-slate-800/80 rounded-2xl p-5 space-y-4 hover:border-slate-700 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Malicious EML Detector</h3>
+                <a href="https://github.com/pauloacabrera/malicious_eml_detector.git" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-medium">
+                  View Repo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              
+              <p class="text-xs sm:text-sm text-slate-300">
+                A full stack cybersecurity web application that can detect malicious eml. files.
+              </p>
+
+              <!-- Gallery Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60 bg-slate-900" onclick="openLightbox('eml-login.PNG')">
+                  <img src="eml-login.PNG" alt="Login Screen" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60 bg-slate-900" onclick="openLightbox('eml-dashboard.PNG')">
+                  <img src="eml-dashboard.PNG" alt="Dashboard Screen" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                </div>
+                <!-- Note: The typo eml-dashboard2,PNG in your code is preserved -->
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60 bg-slate-900" onclick="openLightbox('eml-dashboard2,PNG')">
+                  <img src="eml-dashboard2,PNG" alt="Dashboard 2" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60 bg-slate-900" onclick="openLightbox('eml-detector.PNG')">
+                  <img src="eml-detector.PNG" alt="Detector Screen" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-2 flex flex-wrap items-center gap-2">
+                <span class="text-xs text-slate-400 font-semibold mr-1">Stack:</span>
+                <span class="px-2.5 py-0.5 bg-slate-700/50 text-slate-300 text-xs rounded-md">Python</span>
+                <span class="px-2.5 py-0.5 bg-slate-700/50 text-slate-300 text-xs rounded-md">SQLite</span>
+                <span class="px-2.5 py-0.5 bg-slate-700/50 text-slate-300 text-xs rounded-md">CustomTkinter</span>
+              </div>
+
+              <ul class="text-xs text-slate-400 space-y-1 list-disc list-inside">
+                <li>Detects phishing emails</li>
+                <li>Accurate result and analytics</li>
+              </ul>
+            </div>
+
+            <!-- Existing Projects (Refactored to match UI but keeping exact paths) -->
+            <div class="bg-slate-800/30 border border-slate-800/80 rounded-2xl p-5 space-y-4 hover:border-slate-700 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Bank Queue Management System</h3>
+                <a href="https://github.com/pauloacabrera/unibank_queue_management_system.git" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-medium">
+                  View Repo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300">A simulation-based queue system designed to improve customer flow in a banking environment.</p>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('login.png')">
+                  <img src="login.png" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('dashboard.png')">
+                  <img src="dashboard.png" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('queue.png')">
+                  <img src="queue.png" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-800/30 border border-slate-800/80 rounded-2xl p-5 space-y-4 hover:border-slate-700 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Expense Tracker System</h3>
+                <a href="https://github.com/pauloacabrera/expense-on-point.git" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-medium">
+                  View Repo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300">A desktop application that helps users manage income and expenses.</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('expensee.PNG')">
+                  <img src="expensee.PNG" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('expenseee.PNG')">
+                  <img src="expenseee.PNG" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-800/30 border border-slate-800/80 rounded-2xl p-5 space-y-4 hover:border-slate-700 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Job Application Tracker</h3>
+                <a href="https://github.com/pauloacabrera/AI_Job_Application_Tracker.git" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-medium">
+                  View Repo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300">A web-based application that helps users organize job applications.</p>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('one.PNG')">
+                  <img src="one.PNG" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('two.PNG')">
+                  <img src="two.PNG" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-700/60" onclick="openLightbox('four.PNG')">
+                  <img src="four.PNG" class="w-full h-24 object-cover group-hover:scale-105 transition duration-300"><div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-white"></i></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SECTION 3: SKILLS & TECHNOLOGIES -->
+          <div id="tab-skills" class="tab-content hidden space-y-6">
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="text-2xl font-bold text-white">Skills & Technologies</h2>
+              <div class="h-0.5 w-16 bg-sky-500 rounded-full"></div>
+            </div>
+
+            <!-- Sky blue hover effect on skills -->
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Python</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">SQL</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">SQLite</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">MySQL</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">PyCharm</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">CustomTkinter</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Git</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">MySQL Workbench</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">GitHub</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Pandas</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Pillow</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">IT Support</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Visual Studio Code</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">ReportLab</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Networking</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">HTML</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">CSS</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Tailwind CSS</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Node.js</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">React</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Oracle Database</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Supabase</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Flask</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">JavaScript</span>
+              <span class="px-3.5 py-2 bg-slate-800/60 border border-slate-700/50 text-slate-200 rounded-xl text-xs sm:text-sm font-medium hover:border-sky-500/50 transition">Cybersecurity Fundamentals</span>
+            </div>
+          </div>
+
+          <!-- SECTION 4: WHAT I DO / SERVICES (Sky blue icons) -->
+          <div id="tab-services" class="tab-content hidden space-y-6">
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="text-2xl font-bold text-white">What I Do</h2>
+              <div class="h-0.5 w-16 bg-sky-500 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Develop web applications</p>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Write and manage SQL queries</p>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Build desktop-based systems with CRUD functionality</p>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Create UI designs applications</p>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Perform basic computer hardware and software technical support</p>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Troubleshoot basic network issues</p>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-start gap-3 md:col-span-2 hover:border-sky-500/30 transition">
+                <div class="p-2 bg-sky-500/10 text-sky-400 rounded-lg shrink-0 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                <p class="text-sm text-slate-300">Apply cybersecurity fundamentals and create cybersecurity web application</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 5: CERTIFICATIONS -->
+          <div id="tab-certifications" class="tab-content hidden space-y-6">
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="text-2xl font-bold text-white">Certifications</h2>
+              <div class="h-0.5 w-16 bg-sky-500 rounded-full"></div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-center gap-4">
+                <div class="p-3 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-xl">
+                  <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm">Fortinet Cybersecurity and Cloud Fundamentals NSE 1</h4>
+                  <p class="text-xs text-slate-400">Fortinet Training Institute</p>
+                </div>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-center gap-4">
+                <div class="p-3 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-xl">
+                  <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm">Fortinet Introduction to Next Generation Firewall NSE 2</h4>
+                  <p class="text-xs text-slate-400">Fortinet Training Institute</p>
+                </div>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-center gap-4">
+                <div class="p-3 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-xl">
+                  <i data-lucide="shield" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm">Cisco Networking Academy - Introduction to Cybersecurity</h4>
+                  <p class="text-xs text-slate-400">Cisco</p>
+                </div>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-center gap-4">
+                <div class="p-3 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-xl">
+                  <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm">Cisco Networking Academy - Computer Hardware Basics</h4>
+                  <p class="text-xs text-slate-400">Cisco</p>
+                </div>
+              </div>
+
+              <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-2xl flex items-center gap-4">
+                <div class="p-3 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-xl">
+                  <i data-lucide="lock" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm">ISC2 - CC</h4>
+                  <p class="text-xs text-slate-400">ISC2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
-    <p><strong>Stack:</strong> Python, SQLite / CustomTkinter</p>
-
-    <ul>
-      <li>Detects phishing emails/li>
-      <li>Accurate result and analytics</li>
-    </ul>
+    <!-- FOOTER -->
+    <footer class="text-center text-xs text-slate-500 mt-12">
+      Patience.
+    </footer>
   </div>
 
-  <div class="card">
-    <h3>Bank Queue Management System</h3>
-
-    <p>
-      A simulation-based queue system designed to improve customer flow in a banking environment.
-    </p>
-
-    <a class="repo-link"
-       href="https://github.com/pauloacabrera/unibank_queue_management_system.git"
-       target="_blank">
-       View Repository
-    </a>
-
-    <div class="preview-images">
-      <img src="login.png" alt="Login Screen">
-      <img src="dashboard.png" alt="Dashboard">
-      <img src="queue.png" alt="Queue Management">
-    </div>
-
-    <p><strong>Stack:</strong> Python, SQLite / CustomTkinter</p>
-
-    <ul>
-      <li>Ticket-based queue generation</li>
-      <li>Service counter management</li>
-    </ul>
+  <!-- LIGHTBOX / ZOOM MODAL (Sky blue highlights) -->
+  <div id="lightbox" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 transition duration-300 opacity-0" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 p-2 bg-slate-800 text-white rounded-full hover:bg-sky-600 transition">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="Full Preview" class="max-w-full max-h-[85vh] rounded-2xl border border-slate-700 shadow-2xl object-contain">
   </div>
 
-  <div class="card">
-    <h3>Expense Tracker System</h3>
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-    <p>
-      A desktop application that helps users manage income and expenses
-      with categorized tracking and local database storage.
-    </p>
+    // Tab Navigation Logic
+    function switchTab(tabId) {
+      // Hide all content tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+      });
 
-    <a class="repo-link"
-       href="https://github.com/pauloacabrera/expense-on-point.git"
-       target="_blank">
-       View Repository
-    </a>
+      // Reset button styles
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.className = "tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white transition duration-200";
+      });
 
-    <div class="preview-images">
-      <img src="expensee.PNG" alt="Expense">
-      <img src="expenseee.PNG" alt="Expense Dashboard">
-    </div>
+      // Show targeted tab
+      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
 
-    <p><strong>Stack:</strong> Python, JavaScript, HTML, CSS, SupaBase, Flask</p>
+      // Highlight active button (Sky blue active state)
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      activeBtn.className = "tab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition duration-200 bg-sky-500 text-white shadow-lg shadow-sky-500/20";
+    }
 
-    <ul>
-      <li>Key Metrics: Displays overall balance, income, expenses, and savings upfront.</li>
-      <li>Visual Analytics: Shows a monthly spending trend line graph and a category breakdown donut chart.</li>
-      <li>Transaction History: Lists recent income and expense items with clear amounts.</li>
-    </ul>
-   <h3>Job Application Tracker</h3>
+    // Lightbox / Zoom Logic
+    function openLightbox(imageSrc) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      
+      lightboxImg.src = imageSrc;
+      lightbox.classList.remove('hidden');
+      setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+      }, 10);
+    }
 
-    <p>
-      A web-based application that helps users organize and monitor their job applications in one place.
-    </p>
-
-    <a class="repo-link"
-       href="https://github.com/pauloacabrera/AI_Job_Application_Tracker.git"
-       target="_blank">
-       View Repository
-    </a>
-
-    <div class="preview-images">
-      <img src="one.PNG" alt="Job Dashboard">
-      <img src="two.PNG" alt="Job Analytics">
-      <img src="four.PNG" alt="Job Application">
-    </div>
-
-    <p><strong>Stack:</strong> HTML, CSS, JavaScript</p>
-
-    <ul>
-      <li>Track Job Application Status</li>
-      <li>Manage Interview Schedules Efficiently</li>
-      <li>Monitor Application Success Rates</li>
-    </ul>
-   
-  </div>
-
-  <h2>Skills & Technologies</h2>
-
-  <div class="card">
-    <div class="skills">
-      <div class="skill">Python</div>
-      <div class="skill">SQL</div>
-      <div class="skill">SQLite</div>
-      <div class="skill">MySQL</div>
-      <div class="skill">PyCharm</div>
-      <div class="skill">CustomTkinter</div>
-      <div class="skill">Git</div>
-      <div class="skill">MySQL Workbench</div>
-      <div class="skill">GitHub</div>
-      <div class="skill">Pandas</div>
-      <div class="skill">Pillow</div>
-      <div class="skill">IT Support</div>
-      <div class="skill">Visual Studio Code</div>
-      <div class="skill">ReportLab</div>
-      <div class="skill">Networking</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">Tailwind CSS</div>
-      <div class="skill">Node.js</div>
-       <div class="skill">React</div>
-      <div class="skill">Oracle Database</div>
-      <div class="skill">Supabase</div>
-      <div class="skill">Flask</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Cybersecurity Fundamentals</div>
-    </div>
-  </div>
-
-  <h2>What I Do</h2>
-
-  <div class="card">
-    <ul>
-      <li>Develop web applications</li>
-      <li>Write and manage SQL queries</li>
-      <li>Build desktop-based systems with CRUD functionality</li>
-      <li>Create UI designs applications </li>
-      <li>Perform basic computer hardware and software technical support</li>
-      <li>Troubleshoot basic network issues</li>
-      <li>Apply cybersecurity awareness and security practices</li>
-    </ul>
-  </div>
-
- <h2>Certifications</h2>
-
-  <div class="cert">
-    <ul>
-      <li>Fortinet Cybersecurity and Cloud Fundamentals NSE 1</li>
-      <li>Fortinet Introduction to Next Generation Firewall NSE 2</li>
-      <li>Cisco Networking Academy - Introduction to Cybersecurity</li>
-      <li>Cisco Networking Academy - Computer Hardware Basics</li>
-      <li>ISC2 - CC</li>
-    </ul>
-  </div>
-
-  <h2>Connect With Me</h2>
-
-  <div class="card">
-    <p>
-      GitHub:
-      <a href="https://github.com/pauloacabrera" target="_blank">
-        github.com/pauloacabrera
-      </a>
-    </p>
-
-    <p>
-      Portfolio:
-      <a href="https://pauloacabrera.github.io/paulocabrera.github.io/" target="_blank">
-        paulocabrera.github.io
-      </a>
-    </p>
-
-    <p>Email: cabrera.paulo.a@gmail.com</p>
-  </div>
-
-</section>
-
-<footer>
-  Patience.
-</footer>
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('opacity-0');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+      }, 300);
+    }
+  </script>
 </body>
+</html>
